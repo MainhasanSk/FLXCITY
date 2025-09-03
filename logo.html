@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLXCITY Logo - CSS Version</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1a1f2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .logo-container {
+            text-align: center;
+            position: relative;
+        }
+
+        /* F Square Box with Open Design */
+        .logo-box {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Open Box Design - Top and Right Lines Only */
+        .open-box {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Top Line */
+        .open-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #00d4aa, #4a90e2);
+            border-radius: 2px;
+        }
+
+        /* Right Line */
+        .open-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, #4a90e2, #00d4aa);
+            border-radius: 2px;
+        }
+
+        /* Left Line (doesn't connect to bottom) */
+        .left-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 70%;
+            background: linear-gradient(180deg, #00d4aa, #4a90e2);
+            border-radius: 2px;
+        }
+
+        /* Bottom Line (doesn't connect to left) */
+        .bottom-line {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 70%;
+            height: 3px;
+            background: linear-gradient(270deg, #4a90e2, #00d4aa);
+            border-radius: 2px;
+        }
+
+        /* F Letter */
+        .f-letter {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00d4aa, #4a90e2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            font-family: 'Arial', sans-serif;
+            z-index: 1;
+        }
+
+        /* FLXCITY Text */
+        .main-text {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #00d4aa, #4a90e2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Tagline */
+        .tagline {
+            font-size: 14px;
+            letter-spacing: 4px;
+            font-weight: 300;
+            color: #6b7280;
+            text-transform: uppercase;
+        }
+
+        /* Hover Animation */
+        .logo-container:hover .open-box {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover .f-letter {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .open-box {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .f-letter {
+                font-size: 32px;
+            }
+            
+            .main-text {
+                font-size: 24px;
+                letter-spacing: 4px;
+            }
+            
+            .tagline {
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .open-box {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .f-letter {
+                font-size: 24px;
+            }
+            
+            .main-text {
+                font-size: 18px;
+                letter-spacing: 3px;
+            }
+            
+            .tagline {
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="open-box">
+            <div class="left-line"></div>
+            <div class="bottom-line"></div>
+            <div class="f-letter">F</div>
+        </div>
+        <div class="main-text">FLXCITY</div>
+        <div class="tagline">TURNING IDEAS INTO ACTION</div>
+    </div>
+</body>
+</html>
