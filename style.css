@@ -174,6 +174,7 @@ nav {
 }
 
 .action-btn {
+    
     display: flex;
     align-items: center;
     gap: 8px;
@@ -519,7 +520,7 @@ nav {
 }
 
 /* Hero Section */
-.hero {
+/* .hero {
     height: 100vh;
     background:
                 url('bg.png');
@@ -530,6 +531,95 @@ nav {
     justify-content: center;
     text-align: center;
     color: white;
+} */
+/* Hero Section - Responsive Background Images */
+.hero {
+    height: 100vh;
+    background:
+                url('images/background-desktop.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Mobile Background Image (768px and below) */
+@media (max-width: 768px) {
+    .hero {
+        background: 
+                    url('images/background-mobile.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: scroll; /* Better performance on mobile */
+        height: 100vh;
+    }
+}
+
+/* Tablet Background (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero {
+        background: 
+                    url('images/background-desktop.jpg');
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+/* Large Desktop (1200px and above) */
+@media (min-width: 1200px) {
+    .hero {
+        background: 
+                    url('images/background-desktop.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+}
+
+/* Retina/High-DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero {
+        background:
+                    url('images/background-desktop.jpg');
+    }
+}
+
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2), 
+       (max-width: 768px) and (min-resolution: 192dpi) {
+    .hero {
+        background: 
+                    url('images/background-mobile.jpg');
+    }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 480px) {
+    .hero {
+        background-position: center top;
+        padding: 2rem 1rem;
+    }
+    
+    .hero-content {
+        padding: 1rem;
+    }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+        background:
+                    url('images/background-desktop.jpg');
+        background-size: cover;
+        background-position: center center;
+    }
 }
 
 .hero-content h1 {
